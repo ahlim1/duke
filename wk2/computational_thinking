@@ -1,0 +1,56 @@
+// write your code here
+
+var img = new SimpleImage("hilton.jpg");
+var imgwidth = img.getWidth();
+
+for (var pixel of img.values()){
+    
+    var xcord = pixel.getX();
+    
+    if (xcord < imgwidth/3){
+        pixel.setRed(255);
+    } 
+    if (xcord >= imgwidth/3 && xcord < imgwidth*(2/3)){
+        pixel.setGreen(255);
+    }
+    else{
+        pixel.setBlue(255);
+    }
+        
+}
+
+print(img)
+
+function swapRedGreen(pixel){
+    var oldRed = pixel.getRed();
+    var oldGreen = pixel.getGreen();
+    pixel.setRed(oldGreen);
+    pixel.setGreen(oldRed);
+}
+
+var img2 = new SimpleImage("eastereggs.jpg");
+
+print (img2);
+
+for (var pixel of img2.values()){
+    swapRedGreen(pixel);
+}
+
+print (img2);
+
+var logo = new SimpleImage("duke_blue_devil.png");
+
+print(logo);
+
+for (var pixel of logo.values()){
+    
+    if (pixel.getRed() == 0 && pixel.getGreen() == 51 && pixel.getBlue() == 227){
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue(0);
+    }
+
+}
+
+print(logo);
+
