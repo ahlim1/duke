@@ -13,7 +13,7 @@ for (var pixel of img.values()){
     if (xcord >= imgwidth/3 && xcord < imgwidth*(2/3)){
         pixel.setGreen(255);
     }
-    else{
+    if (xcord < imgwidth && xcord >= imgwidth*(2/3)){
         pixel.setBlue(255);
     }
         
